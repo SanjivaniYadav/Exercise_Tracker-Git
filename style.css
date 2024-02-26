@@ -162,6 +162,10 @@ a:visited {
   opacity: 0;
 }
 
+.hide {
+  display: none;
+}
+
 .form__row {
   display: flex;
   align-items: center;

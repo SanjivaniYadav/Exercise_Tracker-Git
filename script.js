@@ -81,6 +81,7 @@ class App {
   #mapZoomLevel = 13;
   #mapEvent;
   #workouts = [];
+  #eventOccured = false;
 
   constructor() {
     // Get user's position
@@ -353,6 +354,8 @@ class App {
   }
 
   _editFunction(workout) {
+    this.#eventOccured = true;
+
     this._showForm();
     this._renderWorkout.bind(this);
     this._renderWorkoutMarker.bind(this);
@@ -363,6 +366,9 @@ class App {
 
   _deleteFunction(e) {
     let reqItem = JSON.parse(localStorage.getItem('workouts'));
+
+    this.#eventOccured = true;
+
     reqItem.forEach((_, i, arr) => {
       if (e.target.id === arr[i].id) {
         console.log(i);
@@ -374,6 +380,11 @@ class App {
     localStorage.setItem('workouts', reqItem);
     // localStorage.removeItem('workouts');
     location.reload;
+
+    //Hiding that data
+    e.target.closest('.workout').innerHTML = '';
+    // e.target.closest('.form').classList.add('hidden');
+    // form.classList.add('hidden');
   }
 }
 
