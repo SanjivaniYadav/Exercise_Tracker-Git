@@ -1,7 +1,7 @@
-#Exercise Tracker
-[visit website At: ](https://exercise-tracker-map.netlify.app/)
+# Exercise Tracker
+visit website At: [https://exercise-tracker-map.netlify.app/]
 
-##Features
+## Features
 ---
 - Create new Exercise
 - Create and stores data of exercise
@@ -9,7 +9,7 @@
 - Choose duration, type of exercise, distance, date for each exercise
 - Delete and Edit exercise
 
-##Built with
+## Built with
 ---
 - HTML5
 - CSS3
@@ -17,6 +17,6 @@
 - leaflet API
 - JSON local Storage for Data
 
-##Author
+## Author
 ---
-- Sanjivani Yadav - [*Developed the website*](https://github.com/SanjivaniYadav)
+- Sanjivani Yadav - *Developed the website* - [https://github.com/SanjivaniYadav]
