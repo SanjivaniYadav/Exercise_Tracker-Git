@@ -1,8 +1,8 @@
 # Exercise Tracker
-visit website At: [https://exercise-tracker-map.netlify.app/]
+visit website At: https://exercise-tracker-map.netlify.app/
 
 ## Features
----
+
 - Create new Exercise
 - Create and stores data of exercise
 - move to the location as wae click on perticular exercise
@@ -10,7 +10,7 @@ visit website At: [https://exercise-tracker-map.netlify.app/]
 - Delete and Edit exercise
 
 ## Built with
----
+
 - HTML5
 - CSS3
 - JavaScript
@@ -18,5 +18,5 @@ visit website At: [https://exercise-tracker-map.netlify.app/]
 - JSON local Storage for Data
 
 ## Author
----
-- Sanjivani Yadav - *Developed the website* - [https://github.com/SanjivaniYadav]
+
+- Sanjivani Yadav - *Developed the website* - https://github.com/SanjivaniYadav
