@@ -350,18 +350,21 @@ class App {
 
     document.querySelector('.delete-all').addEventListener('click', () => {
       localStorage.clear();
+      containerWorkouts.innerHTML = '';
     });
   }
 
-  _editFunction(workout) {
+  _editFunction(e, workout) {
     this.#eventOccured = true;
 
     this._showForm();
     this._renderWorkout.bind(this);
-    this._renderWorkoutMarker.bind(this);
     this.#workouts.push(workout);
     // this._setLocalStorage();
     console.log(this.#workouts);
+
+    //hiding old form
+    e.target.closest('.workout').remove();
   }
 
   _deleteFunction(e) {
@@ -378,13 +381,10 @@ class App {
     reqItem = JSON.stringify(reqItem);
     console.log(reqItem);
     localStorage.setItem('workouts', reqItem);
-    // localStorage.removeItem('workouts');
     location.reload;
 
     //Hiding that data
-    e.target.closest('.workout').innerHTML = '';
-    // e.target.closest('.form').classList.add('hidden');
-    // form.classList.add('hidden');
+    e.target.closest('.workout').remove();
   }
 }
 
@@ -392,4 +392,3 @@ const app = new App();
 
 const sidebar = document.querySelector('.sidebar');
 const ht = sidebar.getBoundingClientRect();
-// console.log(ht.height);
