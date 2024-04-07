@@ -1,4 +1,5 @@
 # Exercise Tracker
+
 visit website At: https://exercise-tracker-map.netlify.app/
 
 ## Features
@@ -7,7 +8,7 @@ visit website At: https://exercise-tracker-map.netlify.app/
 - Create and stores data of exercise
 - move to the location as wae click on perticular exercise
 - Choose duration, type of exercise, distance, date for each exercise
-- Delete and Edit exercise
+- Delete an exercise Or Delete All exercises
 
 ## Built with
 
@@ -19,4 +20,4 @@ visit website At: https://exercise-tracker-map.netlify.app/
 
 ## Author
 
-- Sanjivani Yadav - *Developed the website* - https://github.com/SanjivaniYadav
+- Sanjivani Yadav - _Developed the website_ - https://github.com/SanjivaniYadav

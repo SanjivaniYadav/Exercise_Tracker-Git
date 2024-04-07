@@ -166,24 +166,12 @@ class App {
     const { lat, lng } = this.#mapEvent.latlng;
     let workout;
 
-    //New feature changes
-    // let { lat, lng } = this.#eventOccured
-    //   ? ({ 0: lat, 1: lng } = Object.assign(
-    //       {},
-    //       this.#workouts[this.#workouts.findIndex(i => this.#eventOccured)]
-    //         .coords
-    //     ))
-    //   : this.#mapEvent.latlng;
-
     // If workout running, create running object
     if (type === 'running') {
       const cadence = +inputCadence.value;
 
       // Check if data is valid
       if (
-        // !Number.isFinite(distance) ||
-        // !Number.isFinite(duration) ||
-        // !Number.isFinite(cadence)
         !validInputs(distance, duration, cadence) ||
         !allPositive(distance, duration, cadence)
       )
@@ -240,9 +228,10 @@ class App {
   }
 
   _renderWorkout(workout) {
+    // <button class="edit-btn">Edit</button>
     let html = `
       <li class="workout workout--${workout.type}" data-id="${workout.id}">
-        <button class="edit-btn">Edit</button>
+        
         <button class="delete-btn" id = ${workout.id}>Delete</button> 
         <h2 class="workout__title">${workout.description}</h2>
 
@@ -341,8 +330,8 @@ class App {
   //Changed Portion With new feature
 
   _updateForm() {
-    const editWorkout = document.querySelector('.edit-btn');
-    editWorkout.addEventListener('click', this._editFunction.bind(this));
+    // const editWorkout = document.querySelector('.edit-btn');
+    // editWorkout.addEventListener('click', this._editFunction.bind(this));
 
     document
       .querySelector('.delete-btn')
@@ -354,18 +343,25 @@ class App {
     });
   }
 
-  _editFunction(e, workout) {
-    this.#eventOccured = true;
+  // _editFunction(e, workout, mapE) {
+  //   this.#eventOccured = true;
 
-    this._showForm();
-    this._renderWorkout.bind(this);
-    this.#workouts.push(workout);
-    // this._setLocalStorage();
-    console.log(this.#workouts);
+  //   //hiding old form
+  //   e.target.closest('.workout').remove();
 
-    //hiding old form
-    e.target.closest('.workout').remove();
-  }
+  //   const elmId = e.target.closest('.workout').getAttribute('data-id');
+
+  //   // const { lat, lng } = this.#mapEvent.latlng;
+  //   this.#workouts.forEach((el, i, arr) => {
+  //     if (elmId === el.id) {
+  //       inputDistance.value = el.distance;
+  //       inputDuration.value = el.duration;
+  //       el.type === 'cycling'
+  //         ? (inputElevation.value = el.elevationGain)
+  //         : (inputCadence.value = el.cadence);
+  //     }
+  //   });
+  // }
 
   _deleteFunction(e) {
     let reqItem = JSON.parse(localStorage.getItem('workouts'));
@@ -374,12 +370,10 @@ class App {
 
     reqItem.forEach((_, i, arr) => {
       if (e.target.id === arr[i].id) {
-        console.log(i);
         arr.splice(i, 1);
       }
     });
     reqItem = JSON.stringify(reqItem);
-    console.log(reqItem);
     localStorage.setItem('workouts', reqItem);
     location.reload;
 
